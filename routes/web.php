@@ -34,6 +34,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //用户个人中心首页
 //Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
-Route::get('users/{user}','UserController@show')->name('users.show');
-Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
-Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
+Route::get('/users/{user}','UserController@show')->name('users.show');
+Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
+Route::put('/users/{user}', 'UserController@update')->name('users.update');
