@@ -39,3 +39,7 @@ Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::put('/users/{user}', 'UserController@update')->name('users.update');
 
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+//分类
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
+
