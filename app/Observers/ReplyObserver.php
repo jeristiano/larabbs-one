@@ -12,7 +12,7 @@ class ReplyObserver
 {
     public function created(Reply $reply)
     {
-        $topic =$reply->topic;
+        $topic = $reply->topic;
         $reply->topic->increment('reply_count', 1);
         $topic->user->notify(new TopicReplied($reply));
     }
@@ -25,5 +25,11 @@ class ReplyObserver
     public function updating(Reply $reply)
     {
         //
+    }
+
+    public function deleted(Reply $reply)
+    {
+        $reply->topic->decrement('reply_count', 1);
+
     }
 }
